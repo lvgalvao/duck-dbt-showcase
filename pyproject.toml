@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "duck-dbt-showcase"
+version = "0.1.0"
+description = ""
+authors = ["Luciano Filho <lvgalvaofilho@gmail.com>"]
+readme = "README.md"
+packages = [{include = "duck_dbt_showcase"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+dbt-snowflake = "1.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
