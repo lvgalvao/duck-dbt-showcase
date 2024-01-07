@@ -1,18 +1,16 @@
 WITH raw_listings AS (
- SELECT
- *
- FROM
- AIRBNB.RAW.RAW_LISTINGS
+    SELECT * FROM {{ source('dev', 'listings')}}
 )
-SELECT
- id AS listing_id,
- name AS listing_name,
- listing_url,
- room_type,
- minimum_nights,
- host_id,
- price AS price_str,
- created_at,
- updated_at
+
+SELECT 
+    id as listing_id,
+    name as listing_name,
+    listing_url,
+    room_type,
+    minimum_nights,
+    host_id,
+    price as price_str,
+    created_at,
+    updated_at
 FROM
- raw_listings
+    raw_listings
